@@ -1,0 +1,34 @@
+#sixteen {
+  --rule: (
+    @grid: 1 / 100%;
+    background-size: 100px 100px;
+    background-image: @doodle(
+      --navy: #404e72;
+      --orange: #ff8c31;
+      --white: #fff;
+
+      @grid: 4;
+      background-color: @var(--navy);
+
+      @nth(1, 4, 13, 16) {
+        border: 6px solid @var(--orange);
+      }
+      @nth(6, 7, 10, 11) {
+        background-color: @var(--white);
+        border: 6px solid @var(--orange);
+      }
+      @nth(2, 14) {
+        border-right: 2px solid @var(--orange);
+      }
+      @nth(3, 15) {
+        border-left: 2px solid @var(--orange);
+      }
+      @nth(5, 8) {
+        border-bottom: 2px solid @var(--orange);
+      }
+      @nth(9, 12) {
+        border-top: 2px solid @var(--orange);
+      }
+    );
+  );
+}
