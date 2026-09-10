@@ -1,0 +1,46 @@
+#seventeen {
+  --rule: (
+    @grid: 1 / 100%;
+    background-size: 320px 80px;
+    background-image: @doodle(
+      --dark-green: #1d3c34;
+      --light-green: #53751c;
+
+      --size: 80px;
+
+      --line: @var(--light-green) 2px, transparent 2px;
+      --half-circle: @var(--light-green) calc(@var(--size) - 1px), @var(--dark-green) @var(--size);
+      --cover: transparent calc(@var(--size) - 1px), @var(--dark-green) @var(--size);
+
+      @grid: 4x1;
+
+      @nth(1) {
+        background: 
+        linear-gradient(270deg, @var(--line)),
+        radial-gradient(circle at 100% 0, @var(--cover)),
+        radial-gradient(circle at 0 100%, @var(--half-circle));
+      }
+
+      @nth(2) {
+        background:
+        linear-gradient(90deg, @var(--line)),
+        radial-gradient(circle at 0 0, @var(--cover)),
+        radial-gradient(circle at 100% 100%, @var(--half-circle));
+      }
+
+      @nth(3) {
+        background: 
+        linear-gradient(270deg, @var(--line)),
+        radial-gradient(circle at 100% 100%, @var(--cover)),
+        radial-gradient(circle at 0 0, @var(--half-circle));
+      }
+
+      @nth(4) {
+        background: 
+        linear-gradient(90deg, @var(--line)),
+        radial-gradient(circle at 0 100%, @var(--cover)),
+        radial-gradient(circle at 100% 0, @var(--half-circle));
+      }
+    );
+  );
+}
