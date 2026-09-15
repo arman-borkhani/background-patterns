@@ -1,0 +1,45 @@
+#eighteen {
+  --rule: (
+    @grid: 1 / 100%;
+    background-size: 200px 200px;
+    background-image: @doodle(
+      --cream: #fff5f4;
+      --pink: #f5babc;
+      --light-green: #569088;
+      --dark-green: #044231;
+
+      --size: 66px;
+      --circle: calc(@var(--size) - 1px), transparent @var(--size);
+
+      @grid: 2;
+
+      @nth(1) {
+        background: 
+          radial-gradient(circle at 0 0, @var(--pink) @var(--circle)),
+          radial-gradient(circle at 100% 100%, @var(--light-green) @var(--circle)),
+          @var(--cream);
+      }
+
+      @nth(2) {
+        background:
+          radial-gradient(circle at 100% 0, @var(--light-green) @var(--circle)),
+          radial-gradient(circle at 0 100%, @var(--pink) @var(--circle)),
+          @var(--dark-green);
+      }
+
+      @nth(3) {
+        background: 
+          radial-gradient(circle at 100% 0, @var(--dark-green) @var(--circle)),
+          radial-gradient(circle at 0 100%, @var(--cream) @var(--circle)),
+          @var(--light-green);
+      }
+
+      @nth(4) {
+        background: 
+          radial-gradient(circle at 0 0, @var(--cream) @var(--circle)),
+          radial-gradient(circle at 100% 100%, @var(--dark-green) @var(--circle)),
+          @var(--pink);
+      }
+    );
+  );
+}
